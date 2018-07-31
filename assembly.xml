@@ -1,0 +1,28 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+	<id>${maven.build.timestamp}</id>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+	<fileSets>
+		<fileSet>
+			<directory>target/</directory>
+			<outputDirectory>zk-zkui/</outputDirectory>
+            <!--<fileMode>0755</fileMode>-->
+            <includes>
+				<include>*.jar</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>conf</directory>
+			<outputDirectory>zk-zkui/conf</outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+
+</assembly>
